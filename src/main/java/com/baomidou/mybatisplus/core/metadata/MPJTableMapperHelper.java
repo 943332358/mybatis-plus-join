@@ -14,6 +14,9 @@ public class MPJTableMapperHelper {
     private static final Map<Class<?>, Class<?>> CACHE = new ConcurrentHashMap<>();
 
     public static void init(Class<?> clazz, Class<?> mapper) {
+        if (clazz == null) {
+            return;
+        }
         CACHE.put(clazz, mapper);
     }
 
